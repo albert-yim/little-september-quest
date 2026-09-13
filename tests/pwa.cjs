@@ -11,7 +11,7 @@ assert.match(html, /rel="apple-touch-icon"/);
 assert.match(html, /name="robots" content="noindex, nofollow, noarchive"/);
 assert.match(app, /serviceWorker\.register\("\.\/sw\.js"\)/);
 assert.match(app, /AES-GCM/);
-assert.match(app, /data: "[A-Za-z0-9+/=]{500,}"/);
+assert.match(app, /["']?data["']?: "[A-Za-z0-9+/=]{500,}"/);
 assert.doesNotMatch(app, /const CONFIG = \{/);
 assert.equal(manifest.display, "standalone");
 assert.equal(manifest.start_url, "./index.html");
@@ -27,7 +27,7 @@ for (const [file, size] of [
   assert.equal(png.readUInt32BE(20), size, `${file}: wrong height`);
 }
 
-for (const file of ["index.html", "styles.css?v=8", "app.js?v=8", "manifest.webmanifest", ...manifest.icons.map(icon => icon.src)]) {
+for (const file of ["index.html", "styles.css?v=8", "app.js?v=9", "manifest.webmanifest", ...manifest.icons.map(icon => icon.src)]) {
   assert.ok(worker.includes(`./${file}`), `Offline cache is missing ${file}`);
 }
 

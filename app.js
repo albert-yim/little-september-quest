@@ -1,9 +1,9 @@
 let CONFIG;
 const PROTECTED_CONFIG = {
-  salt: "6wr4fnqwqGTxvTi+aYpETg==",
-  iv: "k7ivjmxw3Wf/1TkU",
-  data: "CTeDQU/rSHU84dnBlMGuALouXdjAI+d1trTWYUXhvFwB0dPjvsd+HNgG8yf1yOLEu0/BPsmkJu9gwJ+7TjdUVkXuapNXhvYd1PkO/guG7rXPeKkhgSHKemqwpHgYeuWusYLCd0vWo/96nvRy6PvlNlnwdmTu3OsFIq3wZDNTPdkqEoOmVbc3RmMKq/LjE50z6/O/L7Q0/betONGBHrqmQpEl9k7MfqDJc2vGvx5QVyKNP+SR6X+TyD8Mt7R6/4CVnV+VVFMnvOc8qqbR4YYW5alyyp9JK9D0ld+/uJoRAHMxRA9rTrO3Y3L+Jwa4xhxpJeJGLagYCVPJSwypdvEHO9eSq2SGHM32a7Ko+BVwDwqHE8mtqRRCxTNDQcTbU7suN7HMwfkabWGigE95ywbqKBVe+YS2xjIviNGxLMO5pON4CJ7Duw4fzSMuUurCMUDrqkSV/F8TryvAv0dhcdvt6JRzEYr86T2mdM0F7j7LaOt7+bS8NvJz0LPCG4VR6M3ZRcWIalfAo+7tKLoQFgbp/1ZPJkQIKmoC1zlQ71xOwf1bFLM2ClAC/QBnsrHDHwWMyMQdLKBvNzCSj3G0D7iHYJ8Ebj64jlqkUJ99x0f/nnrACs65MMBTue2ruczBP7hvRFXLXho5DDmTWdplYnt/kQ2HZvs/H9rL+nC4rSIH8gWHfZnPikH14/3CbqLA+6vrW5wzMUOkZmHo+1MCFtKc",
-  iterations: 250000
+  "salt": "FrAWF+TsfsqCy218u1oRwQ==",
+  "iv": "YRIxzQfNUuqTdHXk",
+  "data": "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",
+  "iterations": 250000
 };
 const UNLOCK_KEY = "piyak-unlock-key-v1";
 
@@ -386,7 +386,7 @@ function letterView() {
     <article class="letter-card">
       <span class="letter-date">SEPTEMBER 14 · WITH LOVE</span>
       ${CONFIG.letter.map((paragraph) => `<p>${paragraph}</p>`).join("")}
-      <p class="letter-sign">삐약을 사랑하는 뇽뇽이가</p>
+      <p class="letter-sign">${escapeHTML(CONFIG.signature || "뇽뇽이가")}</p>
     </article>
     <button class="button" data-action="${choseGift ? "finish" : "next"}">${choseGift ? "우리의 하루 간직하기" : "뇽뇽이 숨겨둔 보상 확인하기"}</button>
   `);
@@ -488,7 +488,7 @@ function wrappedText(ctx, text, x, y, maxWidth, lineHeight) {
 }
 
 function keepsakeCanvas(kind) {
-  const heights = { memory: 1500, letter: 1900, gift: 1500 };
+  const heights = { memory: 1500, letter: 3800, gift: 1500 };
   const canvas = document.createElement("canvas");
   canvas.width = 1080;
   canvas.height = heights[kind] || heights.memory;
@@ -515,7 +515,7 @@ function keepsakeCanvas(kind) {
     ctx.font = 'bold 66px "Gowun Dodum", sans-serif';
     ctx.fillText("삐약에게 보내는 편지", width / 2, 270);
     ctx.fillStyle = "#fffaf0";
-    roundedRect(ctx, padding, 340, width - padding * 2, 1350, 28);
+    roundedRect(ctx, padding, 340, width - padding * 2, canvas.height - 450, 28);
     ctx.fill();
     ctx.strokeStyle = "#d5d7c2";
     ctx.lineWidth = 3;
@@ -533,7 +533,7 @@ function keepsakeCanvas(kind) {
     ctx.textAlign = "right";
     ctx.fillStyle = "#8d7358";
     ctx.font = '36px "Gowun Dodum", sans-serif';
-    ctx.fillText("삐약을 사랑하는 뇽뇽이가", width - padding - 58, 1600);
+    ctx.fillText(CONFIG.signature || "뇽뇽이가", width - padding - 58, canvas.height - 155);
   } else if (kind === "gift") {
     ctx.fillStyle = "#414c3e";
     ctx.font = 'bold 68px "Gowun Dodum", sans-serif';

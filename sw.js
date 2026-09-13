@@ -1,9 +1,9 @@
-const CACHE_NAME = "piyak-birthday-v2";
+const CACHE_NAME = "piyak-birthday-v3";
 const APP_FILES = [
   "./",
   "./index.html",
   "./styles.css?v=8",
-  "./app.js?v=8",
+  "./app.js?v=9",
   "./manifest.webmanifest",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png",
