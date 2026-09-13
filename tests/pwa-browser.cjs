@@ -34,6 +34,10 @@ async function main() {
   const unlocked = await run(`unlockWithPin(${JSON.stringify(testPin)},true).then(()=>({giftName:CONFIG.giftName,letterCount:CONFIG.letter.length}))`);
   assert.ok(unlocked.giftName);
   assert.ok(unlocked.letterCount > 0);
+  const directLetter = await run(`(()=>{state={...freshState(),step:14,maxStep:14};render();document.querySelector('[data-action="selectRewardFirst"][data-value="letter"]').click();return {step:state.step,rewardFirst:state.rewardFirst,letterCard:!!document.querySelector('.letter-card')};})()`);
+  assert.deepEqual(directLetter, { step: 15, rewardFirst: "letter", letterCard: true });
+  const warningLetter = await run(`(()=>{state={...freshState(),step:16,maxStep:16,rewardFirst:'gift',giftConfirmed:false};render();document.querySelector('[data-action="confirmRewardChoice"][data-value="letter"]').click();return {step:state.step,rewardFirst:state.rewardFirst,letterCard:!!document.querySelector('.letter-card')};})()`);
+  assert.deepEqual(warningLetter, { step: 15, rewardFirst: "letter", letterCard: true });
   const pwa = await run(`(async()=>{
     const registration=await navigator.serviceWorker.ready;
     const cacheNames=await caches.keys();
@@ -67,7 +71,7 @@ async function main() {
     await run(`localStorage.removeItem("piyak-unlock-key-v1")`);
   }
   socket.close();
-  console.log(`PWA browser checks passed: service worker activated, ${pwa.entries} resources cached, offline launch works.`);
+  console.log(`PWA browser checks passed: PIN unlock, both letter choices, service worker, ${pwa.entries} cached resources, and offline launch work.`);
 }
 
 main().catch(error => {
