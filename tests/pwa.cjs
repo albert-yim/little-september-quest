@@ -27,7 +27,7 @@ for (const [file, size] of [
   assert.equal(png.readUInt32BE(20), size, `${file}: wrong height`);
 }
 
-for (const file of ["index.html", "styles.css?v=8", "app.js?v=9", "manifest.webmanifest", ...manifest.icons.map(icon => icon.src)]) {
+for (const file of ["index.html", "styles.css?v=8", "app.js?v=10", "manifest.webmanifest", ...manifest.icons.map(icon => icon.src)]) {
   assert.ok(worker.includes(`./${file}`), `Offline cache is missing ${file}`);
 }
 
